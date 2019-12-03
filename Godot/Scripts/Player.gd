@@ -8,6 +8,7 @@ const speed = 150
 const jump_speed = 500
 
 func _physics_process(delta):
+	$AnimatedSprite.play("default")
 	velocity.y += gravity
 	if Input.is_action_pressed("move_right"):
 		velocity.x = speed

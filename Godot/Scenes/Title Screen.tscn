@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Anton/Anton-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/NewGame.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Credits.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sprites/frame0.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/frame1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/frame2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/frame3.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=4]
 size = 64
@@ -16,6 +20,14 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
@@ -100,18 +112,18 @@ custom_constants/shadow_offset_y = 5
 text = "Credits"
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
-editor/display_folded = true
 margin_left = 522.0
 margin_right = 1040.0
 margin_bottom = 228.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Player Sprite" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
-margin_left = 259.0
-margin_top = 114.0
-margin_right = 259.0
-margin_bottom = 114.0
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Menu/CenterRow/CenterContainer"]
+position = Vector2( 136.5, 121 )
+scale = Vector2( 3.82812, 3.3125 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
 
 [node name="Label" type="Label" parent="Menu"]
 margin_top = 331.0
