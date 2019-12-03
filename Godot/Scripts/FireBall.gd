@@ -8,13 +8,14 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	$AnimatedSprite.play("Shoot")
 	velocity.x = speed*delta*direction
 	translate(velocity)
 
 func fireball_direction(dir):
 	direction = dir
 	if dir == -1:
-		$Sprite.flip_h = true
+		$AnimatedSprite.flip_h = true
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
