@@ -3,9 +3,14 @@ extends KinematicBody2D
 const GRAVITY = 1200.0
 const WALK_SPEED = 400
 
+
 var velocity = Vector2()
 var jump_speed=500
 var jump=false
+
+
+func _ready():
+    set_process_input(true)
 
 func _physics_process(delta):
     jump=false
@@ -21,5 +26,9 @@ func _physics_process(delta):
         jump=true
     if jump and is_on_floor():
         velocity.y=-jump_speed
+    if Input.is_action_just_pressed("Attack"):
+            var projectile = preload("res://Scene/fireball.tscn").instance()
+            get_parent().add_child(projectile)
+            projectile.shoot_at_mouse(self.global_position)
 
     move_and_slide(velocity, Vector2(0, -1))
