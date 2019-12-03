@@ -12,6 +12,11 @@ var next_jump_time = -1
 var target_player_dist = 10
 var eye_reach = 90
 var vision = 600
+var life=100
+
+var timer=null
+var bullet_delay=2
+var can_shoot=true
 
 var _color=0.0
 var _color_decay=1
@@ -22,6 +27,14 @@ var trauma_color=Color(1,0,0)
 func _ready():
 	set_process(true)
 	_normal_color= Color(1,1,1)		#color change
+	$Sprite/life.value=life
+	timer=Timer.new()
+	timer.set_one_shot(true)
+	timer.set_wait_time(bullet_delay)
+	timer.connect("timeout",self,"on_timeout_complete")
+	add_child(timer)
+func on_timeout_complete():
+	can_shoot=true
 func set_dir(target_dir):
 	if next_dir != target_dir:
 		next_dir = target_dir
@@ -47,6 +60,8 @@ func sees_player():
 				return true
 	return false
 func _process(delta):
+	if life==0:
+		self.queue_free()
 	if Player.position.x < position.x - target_player_dist and sees_player():
 		set_dir(-1)
 	elif Player.position.x > position.x + target_player_dist and sees_player():
@@ -68,6 +83,12 @@ func _process(delta):
 	if is_on_floor() and vel.y > 0:
 		vel.y = 0
 	vel = move_and_slide(vel, Vector2(0, -1))
+	if sees_player() and can_shoot:
+		var projectile = preload("res://Scene/EFireBall.tscn").instance()
+		get_parent().add_child(projectile)
+		projectile.shoot_at_Player(self.global_position)
+		can_shoot=false
+		timer.start()
 	
 #color change----
 	if _color>0:
@@ -88,9 +109,12 @@ func Hit():
 
 
 func _on_HitBox_body_entered(body):
-	print(body)
 	if body.is_in_group("FireBall"):
 		var collision_point=global_position-body.global_position
 		vel.x=sign(collision_point.x)*(1200*2)
-		vel.y=-500
+		vel.y=-350
 		vel=move_and_slide(vel,Vector2(0,-1))
+		life-=20
+		$Sprite/life.value=life
+	if body.is_in_group("Player"):
+		body.Hit()
