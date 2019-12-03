@@ -27,6 +27,10 @@ func _physics_process(delta):
 			velocity.y = -jump_speed
 	if Input.is_action_pressed("shoot"):
 		var FireBall = fireball.instance()
+		if sign($ProjectilePosition.position.x) == 1:
+			FireBall.fireball_direction(1)
+		else:
+			FireBall.fireball_direction(-1)
 		get_parent().add_child(FireBall)
 		FireBall.position = $ProjectilePosition.global_position
 	velocity = move_and_slide(velocity, up) 
