@@ -141,11 +141,13 @@ margin_bottom = 14.0524
 position = Vector2( 694.643, 499.866 )
 next_scene = "res://Scenes/icey scene.tscn"
 
+
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 94.8987, 268.336 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
 shape = SubResource( 5 )
+
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D7"]
 margin_left = -14.0
@@ -156,6 +158,7 @@ color = Color( 0.0352941, 0.462745, 0, 1 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
 modulate = Color( 0.0352941, 0.462745, 0, 1 )
+
 position = Vector2( 1835.5, 139.475 )
 shape = SubResource( 5 )
 __meta__ = {

@@ -149,7 +149,7 @@ position = Vector2( 103.297, 679.147 )
 
 [node name="Goal" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1903.81, 483.881 )
-next_scene = "res://Scenes/Lvl.tscn"
+next_scene = "res://Scenes/lvl.tscn"
 
 [node name="Platform" type="CollisionShape2D" parent="."]
 position = Vector2( 1295.27, 741.125 )
