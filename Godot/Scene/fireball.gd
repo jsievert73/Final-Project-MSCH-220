@@ -33,5 +33,3 @@ func _physics_process(delta):
 			body.Hit()
 			body._on_HitBox_body_entered(self)
 			self.queue_free()
-	if position.y > get_viewport_rect().end.y or position.x > get_viewport_rect().end.x:
-		self.queue_free()

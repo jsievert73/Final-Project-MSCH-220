@@ -76,7 +76,6 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="NewGame" type="Button" parent="Menu/CenterRow/Buttons"]
-editor/display_folded = true
 margin_top = 44.0
 margin_right = 518.0
 margin_bottom = 104.0
