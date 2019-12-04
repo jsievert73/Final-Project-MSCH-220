@@ -38,8 +38,10 @@ func _physics_process(delta):
 
     if Input.is_action_pressed("ui_left"):
         velocity.x = -WALK_SPEED
+        $Sprite.flip_h = true
     elif Input.is_action_pressed("ui_right"):
         velocity.x =  WALK_SPEED
+        $Sprite.flip_h = false
     else:
         velocity.x = 0
     if Input.is_action_just_pressed("ui_up"):

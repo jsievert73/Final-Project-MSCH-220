@@ -12,7 +12,7 @@ var next_jump_time = -1
 var target_player_dist = 10
 var eye_reach = 90
 var vision = 600
-var life=100
+var life=60
 
 var timer=null
 var bullet_delay=2
@@ -100,7 +100,9 @@ func _process(delta):
 		_decay_color(delta)
 		_apply_color()
 	if _color ==0 and $AnimatedSprite.modulate != _normal_color:
-		$Sprite.modulate=_normal_color
+
+		$AnimatedSprite.modulate=_normal_color
+
 func add_color(amount):
 	_color =amount
 func _apply_color():
