@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Anton/Anton-Regular.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Assets/Sprites/frame1.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/frame2.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/frame3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/LevelGoal1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/LevelGoal2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/LevelGoal3.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -29,7 +32,15 @@ animations = [ {
 "speed": 7.0
 } ]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="DynamicFont" id=6]
 size = 24
 font_data = ExtResource( 2 )
 
@@ -120,11 +131,18 @@ margin_bottom = 228.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Menu/CenterRow/CenterContainer"]
-position = Vector2( 205.5, 149 )
+[node name="Player" type="AnimatedSprite" parent="Menu/CenterRow/CenterContainer"]
+position = Vector2( 17.524, 260.465 )
 scale = Vector2( 3.82812, 3.3125 )
 frames = SubResource( 4 )
 frame = 3
+playing = true
+
+[node name="Goal" type="AnimatedSprite" parent="Menu/CenterRow/CenterContainer"]
+position = Vector2( 449.128, 243.954 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="Label" type="Label" parent="Menu"]
@@ -132,6 +150,6 @@ margin_top = 331.0
 margin_right = 1040.0
 margin_bottom = 560.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Version 1.0
 Nyxit Games"
