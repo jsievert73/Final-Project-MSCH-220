@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 530, 20 )
@@ -22,7 +23,11 @@ texture = SubResource( 2 )
 position = Vector2( -290.914, -45.8726 )
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 56.5928, -121.413 )
+position = Vector2( 8.02859, -79.1833 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 376.454, -29.1412 )
+position = Vector2( 237.096, -98.8203 )
+
+[node name="Goal" parent="." instance=ExtResource( 3 )]
+position = Vector2( 466.639, -76.0135 )
+next_scene = "res://Scenes/Title Screen.tscn"
