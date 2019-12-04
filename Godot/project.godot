@@ -78,7 +78,7 @@ heal={
  ]
 }
 
+
 [rendering]
 
-environment/default_clear_color=Color( 0.941176, 0.333333, 0.270588, 1 )
 environment/default_environment="res://default_env.tres"
