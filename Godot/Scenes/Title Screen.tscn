@@ -124,7 +124,7 @@ size_flags_vertical = 3
 position = Vector2( 205.5, 149 )
 scale = Vector2( 3.82812, 3.3125 )
 frames = SubResource( 4 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Label" type="Label" parent="Menu"]
