@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/GoToTitle.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/Anton/Anton-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1073.0
+margin_top = 676.0
+margin_right = 1278.0
+margin_bottom = 718.0
+custom_fonts/font = SubResource( 1 )
+text = "Back to Title Screen"
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1161.0
+margin_bottom = 458.0
+custom_fonts/font = SubResource( 2 )
+text = "As the day of the apocalypse nears, the denizens of hell grow in excitement. 
+One particular demon is chosen to go into the land of the mortals. Once there, 
+they will wreak havoc upon the world and activate the five pentagram totems,
+opening the way for the rest of hell and beginning the apocalypse. 
+Will humanity be able to stop HELL’S HERALD? Or will they all watch the world burn?
+
+Hell's Herald is a 2-D platformer created as a part of a game jam for MSCH-220 at Indiana University.
+Graphic Design: Jacob Sievert
+Developer: Omar Salinas
+Developer: Bryce Whitmer
+Developer: Jeremy Maldonado"
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
