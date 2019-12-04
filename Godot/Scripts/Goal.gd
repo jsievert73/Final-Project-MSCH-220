@@ -7,4 +7,4 @@ func _ready():
 
 func _on_Goal_body_entered(body):
 	if "Player" in body.name:
-		get_tree().change_scene(next_scene)
+ 		get_tree().change_scene(next_scene)
