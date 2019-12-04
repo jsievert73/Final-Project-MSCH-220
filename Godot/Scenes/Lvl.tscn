@@ -100,8 +100,10 @@ position = Vector2( 94.8987, 268.336 )
 
 [node name="Goal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 694.643, 499.866 )
+next_scene = "res://Scenes/icey scene.tscn"
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+editor/display_folded = true
 shape = SubResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D7"]
@@ -111,6 +113,7 @@ margin_right = 23.0
 margin_bottom = 327.0
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1835.5, 139.475 )
 shape = SubResource( 3 )
 __meta__ = {
