@@ -25,8 +25,8 @@ custom_fonts/font = SubResource( 1 )
 text = "Back to Title Screen"
 
 [node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 1161.0
+margin_bottom = 458.0
 custom_fonts/font = SubResource( 2 )
 text = "***Insert Story Here ***
 
