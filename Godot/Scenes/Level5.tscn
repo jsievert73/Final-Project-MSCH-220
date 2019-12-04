@@ -1,46 +1,30 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scene/Enemy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Volcano Background.png" type="Texture" id=1]
+[ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 642.798, 46.1492 )
-
-[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 76.2892, 448.925 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 234.525, 55.1249 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 642.798, 46.1492 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0.994012, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
-[node name="Floor" type="CollisionShape2D" parent="."]
-position = Vector2( 644.801, 747.676 )
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Floor" type="ColorRect" parent="Floor"]
-margin_left = -646.801
-margin_top = -35.6757
-margin_right = 654.199
-margin_bottom = 51.3243
-color = Color( 0.52549, 0.196078, 0.0509804, 1 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 134.948, 683.431 )
-
-[node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 309.951, 655.141 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 778.396, 655.141 )
-
 [node name="Wall" type="CollisionShape2D" parent="."]
 position = Vector2( -78.6992, 265.245 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -55,7 +39,7 @@ color = Color( 0.52549, 0.196078, 0.0509804, 1 )
 [node name="Wall2" type="CollisionShape2D" parent="."]
 editor/display_folded = true
 position = Vector2( 1963.57, 342.101 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -68,17 +52,142 @@ margin_bottom = 457.0
 color = Color( 0.52549, 0.196078, 0.0509804, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-editor/display_folded = true
 position = Vector2( 1662.23, 728.496 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Floor3" type="ColorRect" parent="CollisionShape2D"]
-margin_left = -234.042
-margin_top = -55.9847
-margin_right = 227.958
-margin_bottom = 74.0153
+margin_left = -90.0
+margin_top = -46.0
+margin_right = 228.0
+margin_bottom = 74.0
 color = Color( 0.52549, 0.196078, 0.0509804, 1 )
 
-[node name="Goal" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1821.48, 615.005 )
+[node name="Floor" type="CollisionShape2D" parent="."]
+position = Vector2( 644.801, 747.676 )
+shape = SubResource( 3 )
+
+[node name="Floor" type="ColorRect" parent="Floor"]
+margin_left = -647.0
+margin_top = -36.0
+margin_right = 993.0
+margin_bottom = 51.0
+color = Color( 0.52549, 0.196078, 0.0509804, 1 )
+
+[node name="Sprite" type="Sprite" parent="Floor"]
+position = Vector2( 685.369, -89.4374 )
+scale = Vector2( 2.68518, 2134.58 )
+texture = SubResource( 5 )
+
+[node name="Node2D4" type="Node2D" parent="Floor"]
+editor/display_folded = true
+position = Vector2( -1494.8, -747.676 )
+
+[node name="Sprite" type="Sprite" parent="Floor/Node2D4"]
+position = Vector2( 126.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="Floor/Node2D4"]
+position = Vector2( 380.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="Floor/Node2D4"]
+position = Vector2( 0.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="Floor/Node2D4"]
+position = Vector2( 615.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Node2D" type="Node2D" parent="Floor"]
+editor/display_folded = true
+position = Vector2( -644.801, -747.676 )
+
+[node name="Sprite" type="Sprite" parent="Floor/Node2D"]
+position = Vector2( 126.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="Floor/Node2D"]
+position = Vector2( 380.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="Floor/Node2D"]
+position = Vector2( 0.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="Floor/Node2D"]
+position = Vector2( 615.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Node2D2" type="Node2D" parent="Floor"]
+editor/display_folded = true
+position = Vector2( 205.199, -747.676 )
+
+[node name="Sprite" type="Sprite" parent="Floor/Node2D2"]
+position = Vector2( 126.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="Floor/Node2D2"]
+position = Vector2( 380.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="Floor/Node2D2"]
+position = Vector2( 0.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="Floor/Node2D2"]
+position = Vector2( 615.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Node2D3" type="Node2D" parent="Floor"]
+editor/display_folded = true
+position = Vector2( 1055.2, -760.676 )
+
+[node name="Sprite" type="Sprite" parent="Floor/Node2D3"]
+position = Vector2( 126.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="Floor/Node2D3"]
+position = Vector2( 380.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="Floor/Node2D3"]
+position = Vector2( 0.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite4" type="Sprite" parent="Floor/Node2D3"]
+position = Vector2( 615.582, 353.376 )
+scale = Vector2( 1, 1.38458 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 1410.66, 1013.59 )
+scale = Vector2( 0.121507, 651.963 )
+texture = SubResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 134.948, 683.431 )
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 309.951, 655.141 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 778.396, 655.141 )
+
+[node name="Goal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1817.7, 634.543 )
 next_scene = "res://Win.tscn"
