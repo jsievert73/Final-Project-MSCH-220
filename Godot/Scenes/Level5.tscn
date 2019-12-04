@@ -1,73 +1,4 @@
-[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scene/Enemy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 642.798, 46.1492 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 76.2892, 448.925 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 234.525, 55.1249 )
-
-[node name="StaticBody2D" type="StaticBody2D"]
-
-[node name="Floor" type="CollisionShape2D" parent="."]
-position = Vector2( 644.801, 747.676 )
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Floor" type="ColorRect" parent="Floor"]
-margin_left = -646.801
-margin_top = -35.6757
-margin_right = 654.199
-margin_bottom = 51.3243
-color = Color( 0.52549, 0.196078, 0.0509804, 1 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 134.948, 683.431 )
-
-[node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 309.951, 655.141 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 778.396, 655.141 )
-
-[node name="Wall" type="CollisionShape2D" parent="."]
-position = Vector2( -78.6992, 265.245 )
-shape = SubResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="ColorRect" type="ColorRect" parent="Wall"]
-margin_left = -73.0
-margin_top = -458.0
-margin_right = 75.0
-margin_bottom = 457.0
-color = Color( 0.52549, 0.196078, 0.0509804, 1 )
-
-[node name="Wall2" type="CollisionShape2D" parent="."]
-editor/display_folded = true
-position = Vector2( 1963.57, 342.101 )
-shape = SubResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="ColorRect" type="ColorRect" parent="Wall2"]
-margin_left = -73.0
-margin_top = -458.0
-margin_right = 75.0
-margin_bottom = 457.0
-color = Color( 0.52549, 0.196078, 0.0509804, 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 editor/display_folded = true
 position = Vector2( 1662.23, 728.496 )
 shape = SubResource( 3 )
@@ -81,4 +12,5 @@ color = Color( 0.52549, 0.196078, 0.0509804, 1 )
 
 [node name="Goal" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1821.48, 615.005 )
+
 next_scene = "res://Win.tscn"

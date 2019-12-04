@@ -17,6 +17,7 @@ extents = Vector2( 85.2605, 110.387 )
 
 [node name="Goal" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1903.81, 483.881 )
+
 next_scene = "res://icey scene.tscn"
 
 [node name="Wall" type="CollisionShape2D" parent="."]
