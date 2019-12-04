@@ -25,9 +25,10 @@ var _decay_rate=0.0
 var trauma_color=Color(1,0,0)
 
 func _ready():
+	
 	set_process(true)
 	_normal_color= Color(1,1,1)		#color change
-	$Sprite/life.value=life
+	$AnimatedSprite/life.value=life
 	timer=Timer.new()
 	timer.set_one_shot(true)
 	timer.set_wait_time(bullet_delay)
@@ -60,6 +61,10 @@ func sees_player():
 				return true
 	return false
 func _process(delta):
+	if dir == 1:
+		$AnimatedSprite.flip_h = false
+	else:
+		$AnimatedSprite.flip_h = true
 	if life==0:
 		self.queue_free()
 	if Player.position.x < position.x - target_player_dist and sees_player():
@@ -94,13 +99,13 @@ func _process(delta):
 	if _color>0:
 		_decay_color(delta)
 		_apply_color()
-	if _color ==0 and $Sprite.modulate != _normal_color:
+	if _color ==0 and $AnimatedSprite.modulate != _normal_color:
 		$Sprite.modulate=_normal_color
 func add_color(amount):
 	_color =amount
 func _apply_color():
 	var a= min(1,_color)
-	$Sprite.modulate=_normal_color.linear_interpolate(trauma_color,a)
+	$AnimatedSprite.modulate=_normal_color.linear_interpolate(trauma_color,a)
 func _decay_color(delta):
 	var change=_color_decay*delta
 	_color=max(_color-change,0)
@@ -115,6 +120,6 @@ func _on_HitBox_body_entered(body):
 		vel.y=-350
 		vel=move_and_slide(vel,Vector2(0,-1))
 		life-=20
-		$Sprite/life.value=life
+		$AnimatedSprite/life.value=life
 	if body.is_in_group("Player"):
 		body.Hit()

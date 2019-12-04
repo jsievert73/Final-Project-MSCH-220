@@ -19,10 +19,10 @@ scale = Vector2( 0.5, 30 )
 texture = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -220, -160 )
+position = Vector2( -290.914, -45.8726 )
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 30, -230 )
+position = Vector2( 56.5928, -121.413 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 300, -120 )
+position = Vector2( 376.454, -29.1412 )

@@ -83,7 +83,7 @@ margin_bottom = 104.0
 rect_min_size = Vector2( 360, 60 )
 flat = true
 script = ExtResource( 3 )
-scene_to_load = "res://Scenes/Level1.tscn"
+scene_to_load = "res://Scene/TestFloor.tscn"
 
 [node name="Label" type="Label" parent="Menu/CenterRow/Buttons/NewGame"]
 anchor_right = 1.0
@@ -95,6 +95,7 @@ custom_constants/shadow_offset_y = 5
 text = "New Game"
 
 [node name="Credits" type="Button" parent="Menu/CenterRow/Buttons"]
+editor/display_folded = true
 margin_top = 124.0
 margin_right = 518.0
 margin_bottom = 184.0
