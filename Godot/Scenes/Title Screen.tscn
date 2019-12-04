@@ -66,7 +66,7 @@ margin_bottom = 95.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
-custom_constants/shadow_offset_x = -2
+custom_constants/shadow_offset_x = -4
 custom_constants/shadow_offset_y = 5
 text = "Hell's Herald"
 align = 1
@@ -87,7 +87,6 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="NewGame" type="Button" parent="Menu/CenterRow/Buttons"]
-editor/display_folded = true
 margin_top = 44.0
 margin_right = 518.0
 margin_bottom = 104.0
@@ -142,7 +141,6 @@ playing = true
 position = Vector2( 449.128, 243.954 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 5 )
-frame = 2
 playing = true
 
 [node name="Label" type="Label" parent="Menu"]
@@ -151,5 +149,8 @@ margin_right = 1040.0
 margin_bottom = 560.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = -3
+custom_constants/shadow_offset_y = 3
 text = "Version 1.0
 Nyxit Games"

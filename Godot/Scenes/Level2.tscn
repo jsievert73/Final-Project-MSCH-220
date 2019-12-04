@@ -1,0 +1,127 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.53003, 544.548 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 578.211, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 85.2605, 110.387 )
+
+[node name="Level2" type="StaticBody2D"]
+
+[node name="Goal" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1903.81, 483.881 )
+
+[node name="Wall" type="CollisionShape2D" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 232.306 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Wall"]
+margin_left = -15.0
+margin_top = -544.0
+margin_right = 8.0
+margin_bottom = 531.0
+color = Color( 0.619608, 0.690196, 0, 1 )
+
+[node name="Wall2" type="CollisionShape2D" parent="."]
+position = Vector2( 1959.04, 211.19 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Wall2"]
+margin_left = -15.0
+margin_top = -544.0
+margin_right = 8.0
+margin_bottom = 531.0
+color = Color( 0.619608, 0.690196, 0, 1 )
+
+[node name="Floor" type="CollisionShape2D" parent="."]
+editor/display_folded = true
+position = Vector2( 574.542, 730.926 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+margin_left = -571.0
+margin_top = -24.0
+margin_right = 557.0
+margin_bottom = 16.0
+color = Color( 0.619608, 0.690196, 0, 1 )
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 880.287, 661.284 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 103.297, 679.147 )
+
+[node name="Platform" type="CollisionShape2D" parent="."]
+position = Vector2( 1295.27, 741.125 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Platform"]
+margin_left = -82.0
+margin_top = -116.0
+margin_right = 81.0
+margin_bottom = 108.0
+color = Color( 0.619608, 0.690196, 0, 1 )
+
+[node name="Platform2" type="CollisionShape2D" parent="."]
+position = Vector2( 1509.45, 696.93 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Platform2"]
+margin_left = -82.0
+margin_top = -116.0
+margin_right = 81.0
+margin_bottom = 108.0
+color = Color( 0.619608, 0.690196, 0, 1 )
+
+[node name="Platform3" type="CollisionShape2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1706.63, 669.732 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Platform3"]
+margin_left = -82.0
+margin_top = -116.0
+margin_right = 81.0
+margin_bottom = 108.0
+color = Color( 0.619608, 0.690196, 0, 1 )
+
+[node name="Platform4" type="CollisionShape2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1900.41, 645.935 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Platform4"]
+margin_left = -82.0
+margin_top = -116.0
+margin_right = 81.0
+margin_bottom = 108.0
+color = Color( 0.619608, 0.690196, 0, 1 )
