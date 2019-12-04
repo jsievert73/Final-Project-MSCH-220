@@ -100,7 +100,9 @@ func _process(delta):
 		_decay_color(delta)
 		_apply_color()
 	if _color ==0 and $AnimatedSprite.modulate != _normal_color:
+
 		$AnimatedSprite.modulate=_normal_color
+
 func add_color(amount):
 	_color =amount
 func _apply_color():
