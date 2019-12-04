@@ -143,4 +143,4 @@ position = Vector2( 2569.25, -162.575 )
 
 [node name="Goal" parent="." instance=ExtResource( 4 )]
 position = Vector2( 3230.32, -68.3746 )
-next_scene = "res://Scenes/Title Screen.tscn"
+next_scene = "res://Scenes/Level2.tscn"
