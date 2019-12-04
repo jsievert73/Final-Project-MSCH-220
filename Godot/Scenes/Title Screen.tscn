@@ -134,7 +134,7 @@ size_flags_vertical = 3
 position = Vector2( 17.524, 260.465 )
 scale = Vector2( 3.82812, 3.3125 )
 frames = SubResource( 4 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Goal" type="AnimatedSprite" parent="Menu/CenterRow/CenterContainer"]
